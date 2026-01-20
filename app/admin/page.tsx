@@ -81,9 +81,7 @@ function AdminContent() {
               Login
             </motion.button>
 
-            <p className="text-sm text-deepred-700/70 text-center">
-              Demo Password: admin123
-            </p>
+           
           </div>
         </motion.div>
       </div>
