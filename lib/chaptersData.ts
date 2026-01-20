@@ -52,7 +52,7 @@ export const chaptersData: Chapter[] = [
           hi: "धृतराष्ट्र ने कहा: हे संजय, धर्मभूमि कुरुक्षेत्र में युद्ध की इच्छा से एकत्र होकर मेरे और पांडु के पुत्रों ने क्या किया?"
         },
         commentary: {
-          en: "This opening verse sets the stage for the Bhagavad Gita. Dhritarashtra, the blind king, asks his charioteer Sanjaya about the events on the battlefield, revealing his anxiety about the outcome.",
+          en: "This opening verse sets the stage for the Bhagwad Gita. Dhritarashtra, the blind king, asks his charioteer Sanjaya about the events on the battlefield, revealing his anxiety about the outcome.",
           hi: "यह प्रारंभिक श्लोक भगवद गीता के लिए मंच तैयार करता है। अंधे राजा धृतराष्ट्र अपने सारथी संजय से युद्धक्षेत्र की घटनाओं के बारे में पूछते हैं, जो परिणाम के बारे में उनकी चिंता को प्रकट करता है।"
         }
       }

@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     siteName: 'Gita Prerna',
-    tagline: 'Bhagavad Gita - The Divine Song',
+    tagline: 'Bhagwad Gita - The Divine Song',
     home: 'Home',
     chapters: 'Chapters',
     gallery: 'Gallery',
@@ -20,7 +20,7 @@ export const translations = {
     keyShloka: 'Key Shloka',
     videoLectures: 'Video Lectures',
     support: 'Support Our Mission',
-    supportDesc: 'Help us spread the divine wisdom of Bhagavad Gita',
+    supportDesc: 'Help us spread the divine wisdom of Bhagwad Gita',
     selectLanguage: 'Select Language',
     shloka: 'Shloka',
     translation: 'Translation',

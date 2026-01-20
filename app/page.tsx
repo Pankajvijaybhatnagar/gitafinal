@@ -17,7 +17,7 @@ function HomeContent() {
     {
       icon: <BookOpen size={40} />,
       title: t.allChapters,
-      description: "Complete Bhagavad Gita with detailed explanations"
+      description: "Complete Bhagwad Gita with detailed explanations"
     },
     {
       icon: <Languages size={40} />,
@@ -56,6 +56,12 @@ function HomeContent() {
   return (
     <div className="min-h-screen">
       <Header />
+       <section>
+      <img style={{
+      width:"100vw",
+      aspectRatio:'1920/1080'
+      }} src="/himg.jpeg" alt="" />
+    </section>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -64,7 +70,7 @@ function HomeContent() {
         
         {/* Floating Om Symbols */}
         <motion.div
-          className="absolute top-32 left-10 text-8xl opacity-20 text-gold-500"
+          className="absolute top-32 left-10 text-4xl opacity-20 text-gold-500"
           animate={{
             y: [0, -30, 0],
             rotate: [0, 5, 0]
@@ -75,10 +81,10 @@ function HomeContent() {
             ease: "easeInOut"
           }}
         >
-          ॐ
+       <img src="/mor.png" alt="" />
         </motion.div>
         <motion.div
-          className="absolute bottom-20 right-10 text-8xl opacity-20 text-gold-600"
+          className="absolute bottom-20 right-10 text-4xl opacity-20 text-gold-600"
           animate={{
             y: [0, 30, 0],
             rotate: [0, -5, 0]
@@ -90,13 +96,13 @@ function HomeContent() {
             delay: 1
           }}
         >
-          ॐ
+        श्री कृष्ण कृपा 
         </motion.div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           {/* Om Symbol */}
           <motion.div
-            className="text-9xl mb-8"
+            className="text-6xl mb-8"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{
@@ -104,7 +110,7 @@ function HomeContent() {
               ease: "easeOut"
             }}
           >
-            <span className="saffron-text-gradient">ॐ</span>
+            <span className="saffron-text-gradient">श्री कृष्ण कृपा </span>
           </motion.div>
 
           {/* Main Heading */}
@@ -132,7 +138,7 @@ function HomeContent() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            Experience the timeless wisdom of the Bhagavad Gita. 
+            Experience the timeless wisdom of the Bhagwad Gita. 
             Explore divine teachings that illuminate the path to self-realization and inner peace.
           </motion.p>
 
@@ -440,7 +446,7 @@ function HomeContent() {
               You have the right to perform your duty, but not to the fruits of your actions
             </p>
             <p className="text-lg text-saffron-100 mt-6">
-              — Bhagavad Gita 2.47
+              — Bhagwad Gita 2.47
             </p>
           </motion.div>
         </div>
@@ -495,7 +501,7 @@ function HomeContent() {
               {t.beginJourney}
             </h2>
             <p className="text-xl text-gold-500 mb-12 leading-relaxed">
-              Dive into the profound teachings of the Bhagavad Gita and discover wisdom that transcends time
+              Dive into the profound teachings of the Bhagwad Gita and discover wisdom that transcends time
             </p>
             <Link href="/chapters">
               <motion.button

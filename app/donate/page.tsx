@@ -173,7 +173,7 @@ function DonateContent() {
             </motion.button>
 
             <p className="text-center text-sm text-deepred-700/70 mt-6">
-              Your donation is secure and will be used to spread the divine wisdom of Bhagavad Gita
+              Your donation is secure and will be used to spread the divine wisdom of Bhagwad Gita
             </p>
           </motion.div>
 
@@ -204,7 +204,7 @@ function DonateContent() {
                 },
                 {
                   title: 'Global Outreach',
-                  description: 'Spread the teachings of Bhagavad Gita to seekers around the world.',
+                  description: 'Spread the teachings of Bhagwad Gita to seekers around the world.',
                 },
               ].map((item, index) => (
                 <div key={index} className="p-6 bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-saffron-200">

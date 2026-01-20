@@ -33,7 +33,7 @@ export default function Header() {
                 <h1 className="text-2xl font-bold saffron-text-gradient font-display">
                   {t.siteName}
                 </h1>
-                <p className="text-xs text-gray-50">Bhagavad Gita</p>
+                <p className="text-xs text-gray-50">Bhagwad Gita</p>
               </div>
             </motion.div>
           </Link>

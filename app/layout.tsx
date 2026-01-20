@@ -2,9 +2,9 @@ import './globals.css'
 import { Toaster } from 'react-hot-toast'
 
 export const metadata = {
-  title: 'गीता प्रेरणा - Bhagavad Gita Divine Wisdom',
-  description: 'Experience the timeless wisdom of the Bhagavad Gita with 18 chapters, 700 shlokas in Hindi, English and multiple languages',
-  keywords: 'Bhagavad Gita, Geeta, Hindi, Sanskrit, Spiritual Wisdom, Krishna, Arjuna',
+  title: 'गीता प्रेरणा - Bhagwad Gita Divine Wisdom',
+  description: 'Experience the timeless wisdom of the Bhagwad Gita with 18 chapters, 700 shlokas in Hindi, English and multiple languages',
+  keywords: 'Bhagwad Gita, Geeta, Hindi, Sanskrit, Spiritual Wisdom, Krishna, Arjuna',
 }
 
 export default function RootLayout({

@@ -14,7 +14,7 @@ function ChaptersContent() {
   return (
     <div className="min-h-screen">
       <Header />
-
+   
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 saffron-gradient-bg opacity-20" />
