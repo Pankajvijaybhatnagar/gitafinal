@@ -146,25 +146,56 @@ function HomeContent() {
       <Header />
       
       {/* Hero Image Section */}
-      <section>
+      <section className="relative h-screen overflow-hidden">
         <img 
-          style={{
-            width:"100vw",
-            aspectRatio:'1920/1080'
-          }} 
+          className="absolute inset-0 w-full h-full object-cover"
           src="/himg.jpeg" 
           alt="Bhagavad Gita" 
         />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+        
+        {/* Floating Elements */}
+        <motion.div
+          className="absolute top-20 left-10 text-6xl opacity-30 text-amber-200"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, 0]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          ॐ
+        </motion.div>
+        
+        <motion.div
+          className="absolute bottom-20 right-10 text-4xl opacity-30 text-amber-200 font-hindi"
+          animate={{
+            y: [0, 20, 0],
+            rotate: [0, -10, 0]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        >
+          श्री कृष्ण
+        </motion.div>
       </section>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Hero Section - White Background with Pattern */}
+      <section className="relative bg-orange-100 min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 om-pattern opacity-10" />
         
         {/* Floating Mor Image */}
         <motion.div
-          className="absolute top-32 left-10 text-4xl opacity-20 text-gold-500"
+          className="absolute top-32 left-10 text-4xl opacity-20 text-red-900"
           animate={{
             y: [0, -30, 0],
             rotate: [0, 5, 0]
@@ -180,7 +211,7 @@ function HomeContent() {
         
         {/* Floating Text */}
         <motion.div
-          className="absolute bottom-20 right-10 text-4xl opacity-20 text-gold-600 font-hindi"
+          className="absolute bottom-20 right-10 text-4xl opacity-20 text-red-900 font-hindi"
           animate={{
             y: [0, 30, 0],
             rotate: [0, -5, 0]
@@ -220,7 +251,7 @@ function HomeContent() {
           </motion.h1>
 
           <motion.h2
-            className="text-3xl md:text-5xl mb-8 text-gold-500 font-light"
+            className="text-3xl md:text-5xl mb-8 text-red-900 font-light"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -229,7 +260,7 @@ function HomeContent() {
           </motion.h2>
 
           <motion.p
-            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-saffron-50 leading-relaxed"
+            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-red-700 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -302,8 +333,8 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 px-6">
+      {/* Features Section - Cream Background */}
+      <section className="py-24 px-6 bg-gradient-to-b from-amber-50 to-orange-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -315,33 +346,33 @@ function HomeContent() {
             <h2 className="text-5xl md:text-6xl font-bold saffron-text-gradient mb-4 font-display">
               {t.features}
             </h2>
-            <p className="text-2xl text-gold-500">Special Features</p>
+            <p className="text-2xl text-amber-700">Special Features</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="glass-effect p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer border-2 border-gold-600/30"
+                className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow cursor-pointer border-2 border-amber-200"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{
                   scale: 1.05,
-                  borderColor: 'rgba(255, 215, 0, 0.6)',
+                  borderColor: 'rgba(251, 191, 36, 0.6)',
                 }}
               >
                 <motion.div
-                  className="text-gold-500 mb-6"
+                  className="text-amber-600 mb-6"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                   {feature.icon}
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gold-500 mb-2">
+                <h3 className="text-2xl font-bold text-amber-700 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-saffron-50 leading-relaxed">
+                <p className="text-amber-900 leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -350,8 +381,8 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* Popular Verses Section */}
-      <section className="py-24 px-6 relative overflow-hidden">
+      {/* Popular Verses Section - Deep Saffron Background */}
+      <section className="py-24 px-6 relative overflow-hidden bg-gradient-to-br from-orange-900 to-red-900">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-12"
@@ -360,10 +391,10 @@ function HomeContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold saffron-text-gradient mb-4 font-display">
+            <h2 className="text-5xl md:text-6xl font-bold text-amber-300 mb-4 font-display">
               Popular Verses
             </h2>
-            <p className="text-lg text-saffron-50 max-w-3xl mx-auto">
+            <p className="text-lg text-amber-100 max-w-3xl mx-auto">
               Explore timeless wisdom from Lord Krishna on karma yoga, bhakti, dharma, and moksha
             </p>
           </motion.div>
@@ -373,7 +404,7 @@ function HomeContent() {
             {/* Left Arrow */}
             <motion.button
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gradient-to-r from-gold-500 to-gold-700 text-deepred-900 shadow-xl flex items-center justify-center"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-red-900 shadow-xl flex items-center justify-center"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -383,7 +414,7 @@ function HomeContent() {
             {/* Right Arrow */}
             <motion.button
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gradient-to-r from-gold-500 to-gold-700 text-deepred-900 shadow-xl flex items-center justify-center"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-red-900 shadow-xl flex items-center justify-center"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -406,21 +437,21 @@ function HomeContent() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Link href={item.link}>
-                    <div className="glass-effect rounded-2xl p-6 h-full border-2 border-gold-600/30 hover:border-gold-500 transition-all cursor-pointer group shadow-lg hover:shadow-2xl">
+                    <div className="bg-orange-800/60 backdrop-blur-md rounded-2xl p-6 h-full border-2 border-amber-400/30 hover:border-amber-300 transition-all cursor-pointer group shadow-lg hover:shadow-2xl">
                       <div className="flex justify-between items-start mb-4">
-                        <h3 className="text-xl font-bold text-gold-500 group-hover:text-gold-400 transition-colors">
+                        <h3 className="text-xl font-bold text-amber-300 group-hover:text-amber-200 transition-colors">
                           {item.verse}
                         </h3>
-                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-saffron-600/50 to-deepred-700/50 text-gold-500 border border-gold-600/30">
+                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-600/40 text-amber-200 border border-amber-400/30">
                           {item.chapter}
                         </span>
                       </div>
                       
-                      <p className="text-saffron-50 leading-relaxed mb-4">
+                      <p className="text-amber-100 leading-relaxed mb-4">
                         {item.description}
                       </p>
                       
-                      <div className="flex items-center text-gold-500 group-hover:text-gold-400 transition-colors">
+                      <div className="flex items-center text-amber-300 group-hover:text-amber-200 transition-colors">
                         <span className="text-sm font-semibold">Read full verse</span>
                         <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
@@ -433,8 +464,8 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* 18 Chapters Showcase Section */}
-      <section className="py-24 px-6">
+      {/* 18 Chapters Showcase Section - Light Peach Background */}
+      <section className="py-24 px-6 bg-gradient-to-b from-orange-100 to-amber-100">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -444,21 +475,21 @@ function HomeContent() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-4 mb-6">
-              <Scroll className="text-gold-500" size={48} />
+              <Scroll className="text-amber-600" size={48} />
               <h2 className="text-5xl md:text-6xl font-bold saffron-text-gradient font-display">
                 {t.allChapters}
               </h2>
-              <Scroll className="text-gold-500" size={48} />
+              <Scroll className="text-amber-600" size={48} />
             </div>
-            <p className="text-2xl text-gold-500 mb-4">{t.allChaptersDesc}</p>
-            <p className="text-lg text-saffron-50 max-w-3xl mx-auto">
+            <p className="text-2xl text-amber-700 mb-4">{t.allChaptersDesc}</p>
+            <p className="text-lg text-amber-900 max-w-3xl mx-auto">
               Explore the complete journey of spiritual enlightenment through all eighteen chapters
             </p>
           </motion.div>
 
           {/* Chapter Display */}
           <motion.div
-            className="glass-effect rounded-3xl shadow-2xl overflow-hidden border-4 border-gold-600/30"
+            className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-amber-300"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -467,7 +498,7 @@ function HomeContent() {
             <div className="grid lg:grid-cols-[1.5fr,1fr] gap-0">
               {/* Left Side - Chapter Content */}
               <motion.div
-                className="p-8 md:p-12"
+                className="p-8 md:p-12 bg-orange-50"
                 key={selectedChapter}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -477,24 +508,24 @@ function HomeContent() {
                 <div className="mb-8">
                   <div className="flex items-center gap-4 mb-4">
                     <motion.div
-                      className="w-16 h-16 rounded-full bg-gradient-to-r from-gold-500 to-gold-700 flex items-center justify-center text-deepred-900 font-bold text-2xl shadow-lg"
+                      className="w-16 h-16 rounded-full bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center text-white font-bold text-2xl shadow-lg"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                     >
                       {selectedChapter}
                     </motion.div>
                     <div className="flex-1">
-                      <h3 className="text-3xl md:text-4xl font-bold text-gold-500 mb-1 font-hindi">
+                      <h3 className="text-3xl md:text-4xl font-bold text-amber-700 mb-1 font-hindi">
                         {chaptersData[selectedChapter - 1].nameHindi}
                       </h3>
-                      <p className="text-xl text-saffron-50 font-semibold">
+                      <p className="text-xl text-amber-900 font-semibold">
                         {chaptersData[selectedChapter - 1].nameEnglish}
                       </p>
                     </div>
                   </div>
-                  <p className="text-lg text-saffron-100 italic mb-2">
+                  <p className="text-lg text-amber-800 italic mb-2">
                     {chaptersData[selectedChapter - 1].subtitle}
                   </p>
-                  <div className="flex items-center gap-4 text-sm text-gold-600">
+                  <div className="flex items-center gap-4 text-sm text-amber-700">
                     <span className="flex items-center gap-1">
                       <BookOpen size={16} />
                       {chaptersData[selectedChapter - 1].verses} {t.verses}
@@ -507,14 +538,14 @@ function HomeContent() {
                 </div>
 
                 {/* Chapter Description */}
-                <div className="mb-8 p-6 glass-effect rounded-2xl border-2 border-gold-600/30 shadow-lg">
+                <div className="mb-8 p-6 bg-white rounded-2xl border-2 border-amber-200 shadow-md">
                   <div className="flex items-start gap-3 mb-4">
-                    <Flame className="text-gold-500 flex-shrink-0 mt-1" size={24} />
+                    <Flame className="text-amber-600 flex-shrink-0 mt-1" size={24} />
                     <div>
-                      <h4 className="text-sm font-semibold text-gold-600 mb-2 uppercase tracking-wide">
+                      <h4 className="text-sm font-semibold text-amber-700 mb-2 uppercase tracking-wide">
                         {t.chapterOverview}
                       </h4>
-                      <p className="text-lg text-saffron-50 leading-relaxed">
+                      <p className="text-lg text-amber-900 leading-relaxed">
                         {chaptersData[selectedChapter - 1].description.en}
                       </p>
                     </div>
@@ -524,10 +555,10 @@ function HomeContent() {
                 {/* Read More Button */}
                 <Link href={`/chapters/${selectedChapter}`}>
                   <motion.button
-                    className="px-8 py-4 rounded-full text-lg font-semibold bg-gradient-to-r from-gold-500 to-gold-700 text-deepred-900 shadow-xl flex items-center gap-2"
+                    className="px-8 py-4 rounded-full text-lg font-semibold bg-gradient-to-r from-red-500 to-red-700 text-white shadow-xl flex items-center gap-2"
                     whileHover={{
                       scale: 1.05,
-                      boxShadow: '0 20px 40px rgba(255, 215, 0, 0.3)',
+                      boxShadow: '0 20px 40px rgba(251, 191, 36, 0.3)',
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -538,10 +569,10 @@ function HomeContent() {
               </motion.div>
 
               {/* Right Side - Chapter Grid Navigation */}
-              <div className="bg-gradient-to-br from-saffron-700/50 to-deepred-800/50 p-8 md:p-12">
+              <div className="bg-gradient-to-br from-red-900 to-red-900 p-8 md:p-12">
                 <div className="sticky top-8">
-                  <div className="bg-gold-600/30 backdrop-blur-sm px-6 py-3 rounded-t-2xl text-center mb-6 border-2 border-gold-500/50">
-                    <h4 className="text-xl font-bold text-gold-500">Chapter {selectedChapter}</h4>
+                  <div className="bg-red-500/50 backdrop-blur-sm px-6 py-3 rounded-t-2xl text-center mb-6 border-2 border-amber-400">
+                    <h4 className="text-xl font-bold text-white">Chapter {selectedChapter}</h4>
                   </div>
                   
                   <motion.div
@@ -558,8 +589,8 @@ function HomeContent() {
                         onClick={() => setSelectedChapter(chapter.number)}
                         className={`aspect-square rounded-xl font-bold text-lg transition-all duration-300 ${
                           selectedChapter === chapter.number
-                            ? 'bg-gradient-to-br from-gold-500 to-gold-700 text-deepred-900 shadow-lg scale-110'
-                            : 'glass-effect text-gold-500 hover:bg-gold-600/30 shadow-md border border-gold-600/30'
+                            ? 'bg-gradient-to-br from-red-600 to-red-500 text-red-900 shadow-lg scale-110'
+                            : 'bg-orange-800/50 backdrop-blur-sm text-amber-200 hover:bg-orange-700/70 shadow-md border border-amber-500/30'
                         }`}
                         whileHover={{
                           scale: selectedChapter === chapter.number ? 1.1 : 1.05,
@@ -573,15 +604,15 @@ function HomeContent() {
                   </motion.div>
 
                   {/* Chapter List */}
-                  <div className="glass-effect rounded-2xl p-4 shadow-lg max-h-[400px] overflow-y-auto border-2 border-gold-600/30">
+                  <div className="bg-orange-800/40 backdrop-blur-md rounded-2xl p-4 shadow-lg max-h-[400px] overflow-y-auto border-2 border-amber-500/30">
                     {chaptersData.map((chapter) => (
                       <motion.button
                         key={chapter.number}
                         onClick={() => setSelectedChapter(chapter.number)}
                         className={`w-full text-left p-3 rounded-xl mb-2 transition-all duration-300 ${
                           selectedChapter === chapter.number
-                            ? 'bg-gradient-to-r from-gold-500 to-gold-700 text-deepred-900 shadow-md'
-                            : 'hover:bg-gold-600/20 text-saffron-50 border border-gold-600/20'
+                            ? 'bg-gradient-to-r from-red-600 to-red-600 text-red-900 shadow-md'
+                            : 'hover:bg-orange-700/50 text-amber-100 border border-amber-500/20'
                         }`}
                         whileHover={{ x: 5 }}
                       >
@@ -606,8 +637,8 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-24 px-6 relative overflow-hidden">
+      {/* Quote Section - Warm Beige Background */}
+      <section className="py-24 px-6 relative overflow-hidden bg-gradient-to-b from-amber-50 to-orange-100">
         <div className="absolute inset-0 om-pattern opacity-5" />
         
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -617,22 +648,22 @@ function HomeContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-6xl mb-8 text-gold-500">ॐ</div>
-            <blockquote className="text-3xl md:text-4xl font-light text-gold-500 mb-6 leading-relaxed font-hindi">
+            <div className="text-6xl mb-8 text-amber-600">ॐ</div>
+            <blockquote className="text-3xl md:text-4xl font-light text-amber-700 mb-6 leading-relaxed font-hindi">
               "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन"
             </blockquote>
-            <p className="text-xl md:text-2xl text-saffron-50 font-light">
+            <p className="text-xl md:text-2xl text-amber-900 font-light">
               You have the right to perform your duty, but not to the fruits of your actions
             </p>
-            <p className="text-lg text-saffron-100 mt-6">
+            <p className="text-lg text-amber-800 mt-6">
               —Bhagwad Gita 2.47
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 px-6">
+      {/* Stats Section - White Background */}
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -642,7 +673,7 @@ function HomeContent() {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                className="text-center p-8 rounded-3xl glass-effect shadow-lg border-2 border-gold-600/30"
+                className="text-center p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-amber-100 shadow-xl border-2 border-amber-200"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -660,18 +691,18 @@ function HomeContent() {
                 >
                   {stat.number}
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gold-500 mb-2">{stat.label}</h3>
+                <h3 className="text-2xl font-bold text-amber-700 mb-2">{stat.label}</h3>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Shloka of the Day Section */}
-      <section className="py-24 px-6">
+      {/* Shloka of the Day Section - Peach/Cream Background */}
+      <section className="py-24 px-6 bg-gradient-to-br from-orange-100 via-amber-50 to-orange-100">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="glass-effect rounded-3xl overflow-hidden shadow-2xl border-4 border-gold-600/30"
+            className="bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -679,17 +710,17 @@ function HomeContent() {
           >
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Left Side - Subscription Form */}
-              <div className="p-8 md:p-12 bg-gradient-to-br from-saffron-700/40 to-deepred-800/40">
+              <div className="p-8 md:p-12 bg-gradient-to-br from-orange-100 to-amber-100">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h2 className="text-4xl md:text-5xl font-bold text-gold-500 mb-4 font-display">
+                  <h2 className="text-4xl md:text-5xl font-bold text-amber-700 mb-4 font-display">
                     Shloka of the Day
                   </h2>
-                  <p className="text-lg text-saffron-50 mb-8 leading-relaxed">
+                  <p className="text-lg text-amber-900 mb-8 leading-relaxed">
                     Have the eternal wisdom of the Gita delivered to your inbox each morning
                   </p>
 
@@ -699,7 +730,7 @@ function HomeContent() {
                       <input
                         type="text"
                         placeholder="Your Name"
-                        className="w-full px-6 py-4 rounded-full glass-effect border-2 border-gold-600/30 focus:border-gold-500 outline-none text-saffron-50 placeholder-saffron-100/50 transition-all"
+                        className="w-full px-6 py-4 rounded-full bg-white border-2 border-amber-300 focus:border-amber-500 outline-none text-amber-900 placeholder-amber-400 transition-all shadow-md"
                       />
                     </div>
                     
@@ -707,15 +738,15 @@ function HomeContent() {
                       <input
                         type="email"
                         placeholder="Your Email"
-                        className="w-full px-6 py-4 rounded-full glass-effect border-2 border-gold-600/30 focus:border-gold-500 outline-none text-saffron-50 placeholder-saffron-100/50 transition-all"
+                        className="w-full px-6 py-4 rounded-full bg-white border-2 border-amber-300 focus:border-amber-500 outline-none text-amber-900 placeholder-amber-400 transition-all shadow-md"
                       />
                     </div>
 
                     <motion.button
-                      className="w-full px-8 py-4 rounded-full text-lg font-semibold bg-gradient-to-r from-gold-500 to-gold-700 text-deepred-900 shadow-xl flex items-center justify-center gap-2"
+                      className="w-full px-8 py-4 rounded-full text-lg font-semibold bg-gradient-to-r from-amber-500 to-amber-700 text-white shadow-xl flex items-center justify-center gap-2"
                       whileHover={{
                         scale: 1.02,
-                        boxShadow: '0 20px 40px rgba(255, 215, 0, 0.4)',
+                        boxShadow: '0 20px 40px rgba(251, 191, 36, 0.4)',
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -724,8 +755,8 @@ function HomeContent() {
                     </motion.button>
                   </div>
 
-                  <div className="flex items-center gap-2 text-saffron-100/80">
-                    <Sparkles size={16} className="text-gold-500" />
+                  <div className="flex items-center gap-2 text-amber-800">
+                    <Sparkles size={16} className="text-amber-600" />
                     <p className="text-sm">
                       Join thousands of seekers on this spiritual journey
                     </p>
@@ -759,7 +790,7 @@ function HomeContent() {
                       <blockquote className="text-white/90 italic text-lg mb-3 leading-relaxed">
                         "The mind is restless and difficult to restrain, but it is subdued by practice."
                       </blockquote>
-                      <p className="text-gold-400 font-semibold">
+                      <p className="text-amber-300 font-semibold">
                         —Bhagwad Gita 6.35
                       </p>
                     </motion.div>
@@ -771,8 +802,8 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-6">
+      {/* CTA Section - Deep Saffron/Red Background */}
+      <section className="py-24 px-6 bg-gradient-to-br from-orange-800 to-red-900">
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -780,18 +811,18 @@ function HomeContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold saffron-text-gradient mb-6 font-display">
+            <h2 className="text-5xl md:text-6xl font-bold text-amber-200 mb-6 font-display">
               {t.beginJourney}
             </h2>
-            <p className="text-xl text-gold-500 mb-12 leading-relaxed">
+            <p className="text-xl text-amber-100 mb-12 leading-relaxed">
               Dive into the profound teachings of  the Bhagwad Gita and discover wisdom that transcends time
             </p>
             <Link href="/chapters">
               <motion.button
-                className="px-12 py-5 rounded-full text-2xl font-semibold bg-gradient-to-r from-gold-500 to-gold-700 text-deepred-900 shadow-2xl"
+                className="px-12 py-5 rounded-full text-2xl font-semibold bg-gradient-to-r from-amber-400 to-amber-600 text-red-900 shadow-2xl"
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: '0 20px 60px rgba(255, 215, 0, 0.4)',
+                  boxShadow: '0 20px 60px rgba(251, 191, 36, 0.4)',
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -802,8 +833,8 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 px-6 bg-gradient-to-b from-transparent to-saffron-900/20">
+      {/* FAQ Section - Light Cream Background */}
+      <section className="py-24 px-6 bg-gradient-to-b from-amber-50 to-orange-50">
         <div className="max-w-4xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -815,7 +846,7 @@ function HomeContent() {
             <h2 className="text-5xl md:text-6xl font-bold saffron-text-gradient mb-4 font-display">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gold-500">
+            <p className="text-xl text-amber-700">
               Everything you need to know about  the Bhagwad Gita
             </p>
           </motion.div>
@@ -831,14 +862,14 @@ function HomeContent() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="glass-effect rounded-2xl overflow-hidden border-2 border-gold-600/30 shadow-lg"
+                className="bg-white rounded-2xl overflow-hidden border-2 border-amber-200 shadow-lg"
               >
                 <motion.button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gold-600/10 transition-all"
+                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-amber-50 transition-all"
                   whileHover={{ x: 5 }}
                 >
-                  <h3 className="text-lg md:text-xl font-semibold text-gold-500 pr-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-amber-700 pr-4">
                     {faq.question}
                   </h3>
                   <motion.div
@@ -847,9 +878,9 @@ function HomeContent() {
                     className="flex-shrink-0"
                   >
                     {openFAQ === index ? (
-                      <Minus size={24} className="text-gold-500" />
+                      <Minus size={24} className="text-amber-600" />
                     ) : (
-                      <Plus size={24} className="text-gold-500" />
+                      <Plus size={24} className="text-amber-600" />
                     )}
                   </motion.div>
                 </motion.button>
@@ -864,8 +895,8 @@ function HomeContent() {
                       className="overflow-hidden"
                     >
                       <div className="px-8 pb-6 pt-2">
-                        <div className="w-full h-px bg-gradient-to-r from-transparent via-gold-600/30 to-transparent mb-4" />
-                        <p className="text-saffron-50 leading-relaxed text-base md:text-lg">
+                        <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent mb-4" />
+                        <p className="text-amber-900 leading-relaxed text-base md:text-lg">
                           {faq.answer}
                         </p>
                       </div>
